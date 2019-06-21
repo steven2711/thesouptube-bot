@@ -33,5 +33,19 @@ function tweetQuote() {
 }
 
 const hour = 3600000;
+const twoHour = 7200000;
 
-setInterval(() => tweetQuote(), hour);
+function tweetIntervalDay() {
+  const currentHour = new Date().getHours();
+  console.log("day");
+  return currentHour >= 8 ? tweetQuote() : null;
+}
+
+function tweetIntervalNight() {
+  const currentHour = new Date().getHours();
+  console.log("night");
+  return currentHour < 8 ? tweetQuote() : null;
+}
+
+setInterval(() => tweetIntervalDay(), hour);
+setInterval(() => tweetIntervalNight(), twoHour);
