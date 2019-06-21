@@ -463,5 +463,267 @@ module.exports = [
   {
     quote: "If you can dream it, you can achieve it.",
     author: "Zig Ziglar"
+  },
+  {
+    quote:
+      "Life is the fire that burns and the sun that gives light. Life is the wind and the rain and the thunder in the sky. Life is matter and is earth, what is and what is not, and what beyond is in Eternity.",
+    author: "Seneca"
+  },
+  {
+    quote: "Sometimes even to live is an act of courage.",
+    author: "Seneca"
+  },
+  {
+    quote: "All cruelty springs from weakness.",
+    author: "Seneca"
+  },
+  {
+    quote: "We suffer more often in imagination than in reality.",
+    author: "Seneca"
+  },
+  {
+    quote: "Ignorance is the cause of fear.",
+    author: "Seneca"
+  },
+  {
+    quote: "Nothing is more honorable than a grateful heart.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "He suffers more than necessary, who suffers before it is necessary.",
+    author: "Seneca"
+  },
+  {
+    quote: "If you wish to be loved; Love!",
+    author: "Seneca"
+  },
+  {
+    quote: "Wealth is the slave of a wise man and the master of a fool.",
+    author: "Seneca"
+  },
+  {
+    quote: "Luck is what happens when preparation meets opportunity.",
+    author: "Seneca"
+  },
+  {
+    quote: "If a man knows not to which port he sails, no wind is favorable.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "Remember that pain has this most excellent quality. If prolonged it cannot be severe, and if severe it cannot be prolonged.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "In the meantime, cling tooth and nail to the following rule: not to give in to adversity, not to trust prosperity, and always take full note of fortune’s habit of behaving just as she pleases.",
+    author: "Seneca"
+  },
+  {
+    quote: "While we wait for life, life passes.",
+    author: "Seneca"
+  },
+  {
+    quote: "Death is the wish of some, the relief of many, and the end of all.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "Religion is regarded by the common people as true, by the wise as false, and by rulers as useful.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "You act like mortals in all that you fear, and like immortals in all that you desire.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "Anger, if not restrained, is frequently more hurtful to us than the injury that provokes it.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "It is not the man who has too little, but the man who craves more, that is poor.",
+    author: "Seneca"
+  },
+  {
+    quote: "Fate leads the willing and drags along the reluctant.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "If you live in harmony with nature you will never be poor; if you live according what others think, you will never be rich.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "There is nothing more despicable than an old man who has no other proof than his age to offer of his having lived long in the world.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "It does not matter how many books you have, but how good are the books which you have.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "No man is crushed by misfortune unless he has first been deceived by prosperity.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "It’s not because things are difficult that we dare not venture. It’s because we dare not venture that they are difficult.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "I shall never be ashamed of citing a bad author if the line is good.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "People are frugal in guarding their personal property; but as soon as it comes to squandering time they are most wasteful of the one thing in which it is right to be stingy.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "The greatest obstacle to living is expectancy, which hangs upon tomorrow and loses today. You are arranging what is in Fortune’s control and abandoning what lies in yours.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "The body’s needs are few: it wants to be free from cold, to banish hunger and thirst with nourishment; if we long for anything more we are exerting ourselves to serve our vices, not our needs.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "Of all people only those are at leisure who make time for philosophy, only those are really alive. For they not only keep a good watch over their own lifetimes, but they annex every age to theirs.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "What is harder than rock? What is softer than water? Yet hard rocks are hollowed out by soft water.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "A gem cannot be polished without friction, nor a man perfected without trials.",
+    author: "Seneca"
+  },
+  {
+    quote: "Throw me to the wolves and I will return leading the pack.",
+    author: "Seneca"
+  },
+  {
+    quote: "A man’s as miserable as he thinks he is.",
+    author: "Seneca"
+  },
+  {
+    quote: "The greatest wealth is a poverty of desires.",
+    author: "Seneca"
+  },
+  {
+    quote:
+      "It's not what happens to you, but how you react to it that matters.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "We have two ears and one mouth so that we can listen twice as much as we speak.",
+    author: "Epictetus"
+  },
+  {
+    quote: "No man is free who is not master of himself.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "Men are disturbed not by things, but by the view which they take of them.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "Make the best use of what is in your power, and take the rest as it happens.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Know, first, who you are, and then adorn yourself accordingly.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "He is a wise man who does not grieve for the things which he has not, but rejoices for those which he has.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "If you want to improve, be content to be thought foolish and stupid.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Only the educated are free.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "When your thoughts, words, and deeds form a seamless fabric, you streamline your efforts and thus eliminate worry and dread.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Authentic happiness is always independent of external conditions.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "When we blather about trivial things, we ourselves become trivial, for our attention gets taken up with trivialities. You become what you give your attention to.",
+    author: "Epictetus"
+  },
+  {
+    quote: "If you desire to be good, begin by believing that you are wicked.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "Be careful to leave your sons well instructed rather than rich, for the hopes of the instructed are better than the wealth of the ignorant.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "If one oversteps the bounds of moderation, the greatest pleasures cease to please.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "It is not he who reviles or strikes you who insults you, but your opinion that these things are insulting.",
+    author: "Epictetus"
+  },
+  {
+    quote: "All philosophy lies in two words, sustain and abstain.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "It is impossible for a man to learn what he thinks he already knows.",
+    author: "Epictetus"
+  },
+  {
+    quote: "Circumstances don’t make the man, they only reveal him to himself.",
+    author: "Epictetus"
+  },
+  {
+    quote: "He who laughs at himself never runs out of things to laugh at.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "Any person capable of angering you becomes your master; he can anger you only when you permit yourself to be disturbed by him.",
+    author: "Epictetus"
+  },
+  {
+    quote:
+      "It is your own convictions which compels you; that is, choice compels choice.",
+    author: "Epictetus"
   }
 ];
