@@ -142,6 +142,8 @@ function filterUsers(users) {
 //   }
 // });
 
+let test = 0;
+
 setInterval(() => {
   getStatusAndAddToFriends(getDataObject, (response) => {
     let filteredUsers = filterUsers(response);
