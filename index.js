@@ -25,11 +25,10 @@ let dailyKeywords = [
   "paradox",
   "science",
   "abstract",
-  "food for thought",
 ];
 
 const getDataObject = {
-  q: dailyKeywords[0],
+  q: dailyKeywords[2],
   count: 100, // max call
   lang: "en",
   result_type: "recent",
@@ -63,17 +62,17 @@ function getStatusAndAddToFriends(data, callback) {
 }
 
 function addFriend(user) {
-  T.post("friendships/create", { id: user.user_id }, function (
-    err,
-    data,
-    response
-  ) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(`Added ${user.screen_name} to your friends list!`);
+  T.post(
+    "friendships/create",
+    { user_id: user.user_id, screen_name: user.screen_name },
+    function (err, data, response) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`Added ${user.screen_name} to your friends list!`);
+      }
     }
-  });
+  );
 }
 
 function filterUsers(users) {
@@ -122,27 +121,21 @@ function filterUsers(users) {
 // Necessary to check
 
 // get specified status pool
-// getStatusAndAddToFriends(getDataObject, (response) => {
-//   let filteredUsers = filterUsers(response);
+getStatusAndAddToFriends(getDataObject, (response) => {
+  let filteredUsers = filterUsers(response);
 
-//   console.log(filteredUsers.length);
+  console.log(filteredUsers.length);
 
-//   let timeInterval = filteredUsers.length * 1000;
+  let numberOfFilteredUsers = filteredUsers.length;
 
-//   let numberOfFilteredUsers = filteredUsers.length;
-
-//   let userTracker = 0;
-
-//   for (let i = 0; i < numberOfFilteredUsers; i++) {
-//     (function (i) {
-//       setTimeout(function () {
-//         addFriend(filteredUsers[i]);
-//       }, 5000 * i);
-//     })(i);
-//   }
-// });
-
-let test = 0;
+  for (let i = 0; i < numberOfFilteredUsers; i++) {
+    (function (i) {
+      setTimeout(function () {
+        addFriend(filteredUsers[i]);
+      }, 5000 * i);
+    })(i);
+  }
+});
 
 setInterval(() => {
   getStatusAndAddToFriends(getDataObject, (response) => {
