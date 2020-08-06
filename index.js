@@ -121,21 +121,21 @@ function filterUsers(users) {
 // Necessary to check
 
 // get specified status pool
-getStatusAndAddToFriends(getDataObject, (response) => {
-  let filteredUsers = filterUsers(response);
+// getStatusAndAddToFriends(getDataObject, (response) => {
+//   let filteredUsers = filterUsers(response);
 
-  console.log(filteredUsers.length);
+//   console.log(filteredUsers.length);
 
-  let numberOfFilteredUsers = filteredUsers.length;
+//   let numberOfFilteredUsers = filteredUsers.length;
 
-  for (let i = 0; i < numberOfFilteredUsers; i++) {
-    (function (i) {
-      setTimeout(function () {
-        addFriend(filteredUsers[i]);
-      }, 5000 * i);
-    })(i);
-  }
-});
+//   for (let i = 0; i < numberOfFilteredUsers; i++) {
+//     (function (i) {
+//       setTimeout(function () {
+//         addFriend(filteredUsers[i]);
+//       }, 5000 * i);
+//     })(i);
+//   }
+// });
 
 setInterval(() => {
   getStatusAndAddToFriends(getDataObject, (response) => {
