@@ -5,9 +5,9 @@ const T = new Twit(config);
 
 const fiveMinutes = 300000;
 // const hour = 3600000;
-// const fiveHour = 18000000;
+const fiveHour = 18000000;
 // const twoHour = 7200000;
-const threeHour = 10800000;
+// const threeHour = 10800000;
 
 // function tweetIntervalDay() {
 //   const currentHour = new Date().getHours();
@@ -28,7 +28,7 @@ let dailyKeywords = [
 ];
 
 const getDataObject = {
-  q: dailyKeywords[2],
+  q: dailyKeywords[5],
   count: 100, // max call
   lang: "en",
   result_type: "recent",
@@ -154,4 +154,4 @@ setInterval(() => {
       })(i);
     }
   });
-}, threeHour);
+}, fiveHour);
