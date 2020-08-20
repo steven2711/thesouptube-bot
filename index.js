@@ -93,3 +93,7 @@ const threeHour = 10800000;
 //     }
 //   });
 // }, threeHour);
+
+setInterval(() => {
+  console.log("In Twitter jail");
+}, hour);
