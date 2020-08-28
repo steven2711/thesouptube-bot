@@ -1,5 +1,7 @@
 const Twit = require("twit");
 const config = require("./config/config");
+const fs = require("fs");
+
 const {
   unfollowPerson,
   filterUsers,
@@ -8,6 +10,7 @@ const {
   getDataObject,
   getCurrentFriends,
   checkRelationshipAndUnfollow,
+  postRandomTweet,
 } = require("./functions");
 const T = new Twit(config);
 
@@ -33,6 +36,7 @@ const T = new Twit(config);
 ////// follow_request_sent (T/F) //////
 // Necessary to check
 
+const thirtyMinutes = 1800000;
 const fiveMinutes = 300000;
 const hour = 3600000;
 const fiveHour = 18000000;
@@ -59,24 +63,24 @@ const threeHour = 10800000;
 
 //////////////////////////////// Follow <100 people every five hours (max 400 per day) ////////////////////////////////
 
-// setInterval(() => {
-//   getStatusAndAddToFriends(getDataObject, (response) => {
-//     let filteredUsers = filterUsers(response);
+setInterval(() => {
+  getStatusAndAddToFriends(getDataObject, (response) => {
+    let filteredUsers = filterUsers(response);
 
-//     console.log(filteredUsers.length);
+    console.log(filteredUsers.length);
 
-//     let numberOfFilteredUsers = filteredUsers.length;
-//     let addInterval = numberOfFilteredUsers * 1000;
+    let numberOfFilteredUsers = filteredUsers.length;
+    let addInterval = numberOfFilteredUsers * 1000;
 
-//     for (let i = 0; i < numberOfFilteredUsers; i++) {
-//       (function (i) {
-//         setTimeout(function () {
-//           addFriend(filteredUsers[i]);
-//         }, addInterval * i);
-//       })(i);
-//     }
-//   });
-// }, fiveHour * 2);
+    for (let i = 0; i < numberOfFilteredUsers; i++) {
+      (function (i) {
+        setTimeout(function () {
+          addFriend(filteredUsers[i]);
+        }, addInterval * i);
+      })(i);
+    }
+  });
+}, fiveHour);
 
 //////////////////////////////////// Unfollow 20 people every three hours (160 per day) //////////////////////////////////
 
@@ -94,6 +98,12 @@ const threeHour = 10800000;
 //   });
 // }, threeHour);
 
+// setInterval(() => {
+//   console.log("In Twitter jail");
+// }, hour);
+
+///////////////////////// Post a random tweet at set interval //////////////////////////////////////////////
+
 setInterval(() => {
-  console.log("In Twitter jail");
-}, hour);
+  postRandomTweet();
+}, thirtyMinutes);

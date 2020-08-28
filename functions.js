@@ -1,21 +1,22 @@
 const Twit = require("twit");
 const config = require("./config/config");
 const T = new Twit(config);
+const { tweets } = require("./tweets");
 
 //////////////////////////// Adjustables //////////////////////////////
 
 let dailyKeywords = [
-  "logical reasoning",
-  "critical thinking",
-  "philosophy",
-  "theories",
-  "paradox",
-  "science",
-  "abstract",
+  "carnival of souls",
+  "drunk",
+  "movie commentary",
+  "cult movies",
+  "comedy",
+  "invasion of the bee girls",
+  "old movies",
 ];
 
 const getDataObject = {
-  q: dailyKeywords[0],
+  q: dailyKeywords[getRandomInt(dailyKeywords.length)],
   count: 100, // max call
   lang: "en",
   result_type: "recent",
@@ -145,6 +146,31 @@ function checkRelationshipAndUnfollow(friend) {
   );
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function postRandomTweet() {
+  const currentHour = new Date().getHours();
+  const randomNumber = getRandomInt(tweets.length);
+  const tweetTime = 8;
+  const tweet = tweets[randomNumber];
+  const hashtags = tweet.hashtags.join(" ");
+
+  if (currentHour === tweetTime) {
+    const status = {
+      status: `${tweet.tweet} ${hashtags}`,
+    };
+
+    T.post("statuses/update", status, function (err, data, response) {
+      if (err) console.log(err);
+
+      console.log("Successfully posted a tweet!");
+    });
+  }
+}
+
+exports.postRandomTweet = postRandomTweet;
 exports.getStatusAndAddToFriends = getStatusAndAddToFriends;
 exports.filterUsers = filterUsers;
 exports.unfollowPerson = unfollowPerson;
