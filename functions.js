@@ -23,7 +23,7 @@ const getDataObject = {
   result_type: "recent",
 };
 
-///////////////////////////////////////////////////////////////////////////
+/////////////////////////////// Functions ////////////////////////////////////////////
 
 function unfollowPerson(user) {
   T.post(
@@ -168,6 +168,8 @@ function postRandomTweet() {
 
       console.log("Successfully posted a tweet!");
     });
+  } else {
+    console.log("Not time to tweet yet...");
   }
 }
 
