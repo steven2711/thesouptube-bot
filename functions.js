@@ -152,7 +152,7 @@ function getRandomInt(max) {
 }
 
 function postRandomTweet() {
-  const currentHour = new Date().getHours();
+  const currentHour = new Date().getHours() - 5;
   const randomNumber = getRandomInt(tweets.length);
   const tweetTime = 8;
   const tweet = tweets[randomNumber];
