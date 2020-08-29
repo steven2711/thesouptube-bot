@@ -13,11 +13,13 @@ let dailyKeywords = [
   "comedy",
   "invasion of the bee girls",
   "old movies",
-  "powder",
+  "joe rogan",
 ];
 
+/// Testing Joe Rogan mentions. None of the other keywords are working.
+
 const getDataObject = {
-  q: dailyKeywords[getRandomInt(dailyKeywords.length)],
+  q: dailyKeywords[7],
   count: 100, // max call
   lang: "en",
   result_type: "recent",

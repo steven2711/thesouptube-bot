@@ -63,6 +63,8 @@ const threeHour = 10800000;
 
 //////////////////////////////// Follow <100 people every five hours (max 400 per day) ////////////////////////////////
 
+/// Testing Joe Rogan mentions. None of the other keywords are working.
+
 setInterval(() => {
   getStatusAndAddToFriends(getDataObject, (response) => {
     let filteredUsers = filterUsers(response);
@@ -106,6 +108,6 @@ setInterval(() => {
 
 setInterval(() => {
   postRandomTweet();
-}, thirtyMinutes);
+}, hour);
 
 console.log(new Date().getHours() - 5);
