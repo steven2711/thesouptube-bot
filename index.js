@@ -80,7 +80,7 @@ setInterval(() => {
       })(i);
     }
   });
-}, fiveHour);
+}, threeHour);
 
 //////////////////////////////////// Unfollow 20 people every three hours (160 per day) //////////////////////////////////
 
