@@ -19,7 +19,7 @@ let dailyKeywords = [
 /// Testing Joe Rogan mentions. None of the other keywords are working.
 
 const getDataObject = {
-  q: dailyKeywords[7],
+  q: dailyKeywords[1],
   count: 100, // max call
   lang: "en",
   result_type: "recent",
