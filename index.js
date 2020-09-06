@@ -63,26 +63,24 @@ const threeHour = 10800000;
 
 //////////////////////////////// Follow <100 people every five hours (max 400 per day) ////////////////////////////////
 
-/// Testing Joe Rogan mentions. None of the other keywords are working.
+// setInterval(() => {
+//   getStatusAndAddToFriends(getDataObject, (response) => {
+//     let filteredUsers = filterUsers(response);
 
-setInterval(() => {
-  getStatusAndAddToFriends(getDataObject, (response) => {
-    let filteredUsers = filterUsers(response);
+//     console.log(filteredUsers.length);
 
-    console.log(filteredUsers.length);
+//     let numberOfFilteredUsers = filteredUsers.length;
+//     let addInterval = numberOfFilteredUsers * 1000;
 
-    let numberOfFilteredUsers = filteredUsers.length;
-    let addInterval = numberOfFilteredUsers * 1000;
-
-    for (let i = 0; i < numberOfFilteredUsers; i++) {
-      (function (i) {
-        setTimeout(function () {
-          addFriend(filteredUsers[i]);
-        }, addInterval * i);
-      })(i);
-    }
-  });
-}, threeHour);
+//     for (let i = 0; i < numberOfFilteredUsers; i++) {
+//       (function (i) {
+//         setTimeout(function () {
+//           addFriend(filteredUsers[i]);
+//         }, addInterval * i);
+//       })(i);
+//     }
+//   });
+// }, threeHour);
 
 //////////////////////////////////// Unfollow 20 people every three hours (160 per day) //////////////////////////////////
 
