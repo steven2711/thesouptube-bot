@@ -8,6 +8,7 @@ const {
   getStatusAndAddToFriends,
   addFriend,
   getDataObject,
+  grabFollowingListAndRemoveNonFollowers,
   getCurrentFriends,
   checkRelationshipAndUnfollow,
   postRandomTweet,
@@ -84,28 +85,12 @@ const threeHour = 10800000;
 
 //////////////////////////////////// Unfollow 20 people every three hours (160 per day) //////////////////////////////////
 
-// setInterval(() => {
-//   getCurrentFriends((friends) => {
-//     let time = friends.length;
-
-//     for (let i = 0; i < time; i++) {
-//       (function (i) {
-//         setTimeout(function () {
-//           checkRelationshipAndUnfollow(friends[i]);
-//         }, i * 5000);
-//       })(i);
-//     }
-//   });
-// }, threeHour);
-
-// setInterval(() => {
-//   console.log("In Twitter jail");
-// }, hour);
+grabFollowingListAndRemoveNonFollowers();
 
 ///////////////////////// Post a random tweet at set interval //////////////////////////////////////////////
 
-setInterval(() => {
-  postRandomTweet();
-}, hour);
+// setInterval(() => {
+//   postRandomTweet();
+// }, hour);
 
-console.log(new Date().getHours() - 5);
+// console.log(new Date().getHours() - 5);

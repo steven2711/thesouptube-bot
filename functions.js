@@ -106,21 +106,28 @@ function getStatusAndAddToFriends(data, callback) {
   });
 }
 
-function getCurrentFriends(callback) {
-  T.get("friends/list", function (err, data, response) {
-    if (err) console.log(err);
+function getCurrentFriends(cursor) {
+  return new Promise((resolve, reject) => {
+    T.get("friends/list", { cursor: cursor, count: 200 }, function (
+      err,
+      data,
+      response
+    ) {
+      if (err) reject(err);
 
-    let namesAndIds = [];
+      let namesAndIds = [];
+      let nextCursor = data.next_cursor;
 
-    data.users.forEach((user) => {
-      namesAndIds.push({
-        id: user.id_str,
-        screen_name: user.screen_name,
-        following: user.following,
+      data.users.forEach((user) => {
+        namesAndIds.push({
+          id: user.id_str,
+          screen_name: user.screen_name,
+          following: user.following,
+        });
       });
-    });
 
-    callback(namesAndIds);
+      resolve({ friends: namesAndIds, newCursor: nextCursor });
+    });
   });
 }
 
@@ -149,6 +156,44 @@ function checkRelationshipAndUnfollow(friend) {
   );
 }
 
+function grabFollowingListAndRemoveNonFollowers() {
+  let cursor = -1;
+  let followingList = [];
+  let listMultiple = 5; // A list of 1000 people
+  let forLoopTimer = 60000;
+
+  // The list multiple is used to calcultae the size of the following list you would like to grab. Basically, listMultiple * 200
+
+  for (let i = 0; i < listMultiple; i++) {
+    (function (i) {
+      setTimeout(function () {
+        getCurrentFriends(cursor).then((data) => {
+          cursor = data.newCursor;
+          data.friends.forEach((friend) => followingList.unshift(friend));
+        });
+      }, i * forLoopTimer);
+    })(i);
+  }
+
+  // The function below is set to allow the function above to complete before running.
+
+  setTimeout(() => {
+    console.log(
+      `Friends list built with ${followingList.length} following. Now starting the removal process...`
+    );
+
+    let time = followingList.length;
+
+    for (let i = 0; i < time; i++) {
+      (function (i) {
+        setTimeout(function () {
+          checkRelationshipAndUnfollow(followingList[i]);
+        }, i * 600000);
+      })(i);
+    }
+  }, forLoopTimer * listMultiple + 60000);
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -175,6 +220,7 @@ function postRandomTweet() {
   }
 }
 
+exports.grabFollowingListAndRemoveNonFollowers = grabFollowingListAndRemoveNonFollowers;
 exports.postRandomTweet = postRandomTweet;
 exports.getStatusAndAddToFriends = getStatusAndAddToFriends;
 exports.filterUsers = filterUsers;
