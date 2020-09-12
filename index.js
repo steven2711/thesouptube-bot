@@ -89,8 +89,8 @@ grabFollowingListAndRemoveNonFollowers();
 
 ///////////////////////// Post a random tweet at set interval //////////////////////////////////////////////
 
-// setInterval(() => {
-//   postRandomTweet();
-// }, hour);
+setInterval(() => {
+  postRandomTweet();
+}, hour);
 
 // console.log(new Date().getHours() - 5);

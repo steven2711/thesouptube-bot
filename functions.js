@@ -6,14 +6,10 @@ const { tweets } = require("./tweets");
 //////////////////////////// Adjustables //////////////////////////////
 
 let dailyKeywords = [
-  "carnival of souls",
+  "drunk commentary",
   "drunk",
-  "movie commentary",
-  "cult movies",
-  "comedy",
-  "invasion of the bee girls",
-  "old movies",
-  "joe rogan",
+  "party animal",
+  "terrible movie",
 ];
 
 /// Testing Joe Rogan mentions. None of the other keywords are working.
@@ -188,6 +184,7 @@ function grabFollowingListAndRemoveNonFollowers() {
       (function (i) {
         setTimeout(function () {
           checkRelationshipAndUnfollow(followingList[i]);
+          console.log(i);
         }, i * 600000);
       })(i);
     }
