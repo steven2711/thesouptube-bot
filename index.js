@@ -85,7 +85,7 @@ const threeHour = 10800000;
 
 //////////////////////////////////// Unfollow 20 people every three hours (160 per day) //////////////////////////////////
 
-grabFollowingListAndRemoveNonFollowers();
+// grabFollowingListAndRemoveNonFollowers();
 
 ///////////////////////// Post a random tweet at set interval //////////////////////////////////////////////
 

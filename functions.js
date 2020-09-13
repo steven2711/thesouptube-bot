@@ -12,8 +12,6 @@ let dailyKeywords = [
   "terrible movie",
 ];
 
-/// Testing Joe Rogan mentions. None of the other keywords are working.
-
 const getDataObject = {
   q: dailyKeywords[1],
   count: 100, // max call
@@ -158,7 +156,8 @@ function grabFollowingListAndRemoveNonFollowers() {
   let listMultiple = 5; // A list of 1000 people
   let forLoopTimer = 60000;
 
-  // The list multiple is used to calcultae the size of the following list you would like to grab. Basically, listMultiple * 200
+  // The list multiple is used to calculate the size of the following list you would like to grab. Basically, listMultiple * 200
+  // The max number of accounts per list is 200.
 
   for (let i = 0; i < listMultiple; i++) {
     (function (i) {
@@ -178,9 +177,9 @@ function grabFollowingListAndRemoveNonFollowers() {
       `Friends list built with ${followingList.length} following. Now starting the removal process...`
     );
 
-    let time = followingList.length;
+    let numberOfFollowing = followingList.length;
 
-    for (let i = 0; i < time; i++) {
+    for (let i = 0; i < numberOfFollowing; i++) {
       (function (i) {
         setTimeout(function () {
           checkRelationshipAndUnfollow(followingList[i]);
